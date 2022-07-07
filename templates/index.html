@@ -1,25 +1,30 @@
 {% extends 'base.html' %} {% block content %}
 <h1>{{title}}</h1>
-<div>
+<div class="'wrapper">
     <ul>
         {% for event in all_events %}
             <li>
                 Name: <b>{{event.name}}</b>
                 Date: <b>{{ event.date }}</b>
                 Room: <b>{{ event.room }}</b>
+                {% if event.recurring %}
+                    <span>&#10561;</span>
+                {% endif %}
             </li>
         {% endfor %}
     </ul>
     <div>
     <form action="/events" method="post">
         <label for="input-date">Event Date</label>
-        <input type="text" name="date" id="input-date">
+        <input type="date" name="date" id="input-date">
         <label for="input-name">Event Name</label>
         <input type="text" name="name" id="input-name">
         <label for="input-guest_num"> Number of Guests</label>
         <input type="text" name="guest_num" id="input-guest_num">
         <label for="input-room">Event Room</label>
         <input type="text" name="room" id="input-room">
+        <label for="input-recur">Is your event recurring?</label>
+        <input type="checkbox" name="recur" id="input-recur">
         <textarea name="desc" id="input-desc" cols="30" rows="10" placeholder="Write your description here..."></textarea>
         <input type="submit" value="Create new event">
     </form>

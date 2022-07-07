@@ -1,0 +1,35 @@
+:root {
+    --background-color: #470063;
+    --text-color: #C0C999;
+    --header-color: #B30089;
+    --standout-color: #F62DAE;
+    --border-color: #FD96A9;
+}
+
+body {
+    font-family: 'Finlandica', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper ul {
+    display: flex;
+}
+
+.wrapper form {
+    display:flex;
+}
