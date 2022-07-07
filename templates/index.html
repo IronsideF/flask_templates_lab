@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <h1>{{title}}</h1>
-<div class="'wrapper">
+<div class="wrapper">
     <ul>
         {% for event in all_events %}
             <li>
@@ -13,8 +13,9 @@
             </li>
         {% endfor %}
     </ul>
-    <div>
-    <form action="/events" method="post">
+    <div class="forms">
+    <div class="input-form">
+        <form action="/events" method="post">
         <label for="input-date">Event Date</label>
         <input type="date" name="date" id="input-date">
         <label for="input-name">Event Name</label>
@@ -25,9 +26,21 @@
         <input type="text" name="room" id="input-room">
         <label for="input-recur">Is your event recurring?</label>
         <input type="checkbox" name="recur" id="input-recur">
-        <textarea name="desc" id="input-desc" cols="30" rows="10" placeholder="Write your description here..."></textarea>
+        <textarea name="desc" id="input-desc" cols="30" rows="3" placeholder="Write your description here..."></textarea>
         <input type="submit" value="Create new event">
-    </form>
+        </form>
+    </div>
+    <div class="input-form">
+        <form action="/events/delete" method='post'>
+        <select name="name" id="select-name">
+            {% for event in all_events %}
+                <option value="{{event.name}}">{{ event.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Delete Event">
+        </form>
+
+    </div>
     </div>
 </div>
 {% endblock %}

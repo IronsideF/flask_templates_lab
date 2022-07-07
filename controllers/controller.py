@@ -24,3 +24,9 @@ def add_event():
     new_event = Event(date, name, guest_num, room, desc, recur)
     add_new_event(new_event)
     return redirect('/events')
+
+@app.route('/events/delete', methods=['POST'])
+def delete_event():
+    name = request.form['name']
+    remove_event(name)
+    return redirect('/events')

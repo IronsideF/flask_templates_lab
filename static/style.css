@@ -24,12 +24,14 @@ a {
 
 .wrapper {
     display: flex;
+    flex-wrap: 0;
 }
 
 .wrapper ul {
     display: flex;
+    flex-direction: column;
 }
 
-.wrapper form {
+.input-form form {
     display:flex;
-}
+    flex-direction: column;}

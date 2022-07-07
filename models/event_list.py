@@ -9,3 +9,10 @@ event_list = [event_1, event_2, event_3]
 def add_new_event(event):
     event_list.append(event)
 
+def find_event_by_name(name):
+    for event in event_list:
+        if event.name == name:
+            return event
+
+def remove_event(name):
+    event_list.remove(find_event_by_name(name))
