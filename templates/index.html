@@ -10,7 +10,19 @@
             </li>
         {% endfor %}
     </ul>
-    <form action="">
-
+    <div>
+    <form action="/events" method="post">
+        <label for="input-date">Event Date</label>
+        <input type="text" name="date" id="input-date">
+        <label for="input-name">Event Name</label>
+        <input type="text" name="name" id="input-name">
+        <label for="input-guest_num"> Number of Guests</label>
+        <input type="text" name="guest_num" id="input-guest_num">
+        <label for="input-room">Event Room</label>
+        <input type="text" name="room" id="input-room">
+        <textarea name="desc" id="input-desc" cols="30" rows="10" placeholder="Write your description here..."></textarea>
+        <input type="submit" value="Create new event">
     </form>
+    </div>
 </div>
+{% endblock %}
